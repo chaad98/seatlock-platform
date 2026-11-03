@@ -39,6 +39,7 @@ Init scripts run only on an empty volume. To re-run them: `docker compose down -
 ## Workflow
 clarify → domain-model → deep-plan → build (tests first) → security-review → gates → walkthrough → compound.
 Run `fresh-docs` before using any framework API, and `teach` whenever the developer wants to understand something or write it themselves.
+The skills live in `seatlock-platform/.claude/skills/<name>/SKILL.md`. Read the matching SKILL.md before each workflow step. Where a skill conflicts with "Working with the developer" below, the rules below win (for example, `teach` asks a check question, but this developer doesn't want quizzes).
 
 ## Stack decisions so far
 - Node.js 26 LTS (via nvm-windows). TypeScript 6.0.x, **not 7**.
