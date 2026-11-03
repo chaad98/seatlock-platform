@@ -107,11 +107,11 @@ sequenceDiagram
 
 **Why the race is safe:** "expire hold" and "convert hold" both change the same Inventory aggregate, so the database lets only one of them win. A converted hold can't expire, and an expired hold can't be converted.
 
-## 7. Questions for `deep-plan` (verify with `fresh-docs`, may become ADRs)
-1. **Durable delivery:** core NATS drops messages when no subscriber is listening, but the outbox pattern needs at-least-once delivery. That means **NATS JetStream**. Check whether the NestJS 12 NATS transport supports JetStream, or whether we write a JetStream consumer in `infrastructure/messaging`. → ADR 0002
-2. **Hot counter under criterion 18:** optimistic locking with retries vs a single conditional `UPDATE … WHERE held + sold + n <= capacity`. Build both, measure them with k6, and keep the winner. → ADR 0003
+## 7. Questions for `deep-plan` (verify with `fresh-docs`, may become ADRs; ADR numbers are given in the order ADRs are written)
+1. **Durable delivery:** core NATS drops messages when no subscriber is listening, but the outbox pattern needs at-least-once delivery. That means **NATS JetStream**. Check whether the NestJS 12 NATS transport supports JetStream, or whether we write a JetStream consumer in `infrastructure/messaging`. → ADR
+2. **Hot counter under criterion 18:** optimistic locking with retries vs a single conditional `UPDATE … WHERE held + sold + n <= capacity`. Build both, measure them with k6, and keep the winner. → ADR
 3. **One database, two schemas in ticketing:** confirm Prisma 7 support for multiple Postgres schemas.
-4. **Contracts distribution:** GitHub Packages vs git tags for `seatlock-contracts`. → ADR 0004
+4. **Contracts distribution:** GitHub Packages vs git tags for `seatlock-contracts`. → ADR
 5. **Gateway → services trust:** NATS user accounts with per-service subject permissions, so a compromised service can't impersonate another.
 
 ## Context models

@@ -24,7 +24,7 @@ NestJS 12 core packages ship as ES modules only. A CommonJS app can still load t
 | @nestjs/core, common, microservices | 12.3.2 | |
 | @nestjs/cqrs | 12.1.2 | |
 | @nestjs/cli | 12.0.11 | Pins TypeScript ~6.0.2 |
-| TypeScript | 6.0.3 | **Not 7.x**: the Nest CLI and ts-jest don't support it yet |
+| TypeScript | 6.0.3 | **Not 7.x**: the Nest CLI pins ~6.0.2, and 7.0.2 has a decorator-metadata regression that NestJS DI depends on (https://github.com/microsoft/TypeScript/issues/64889). Upgrade when `@nestjs/cli` and the starter move to 7 |
 | prisma, @prisma/client | 7.10.1 (pinned) | npm `latest` for `prisma` is 8.0.0-rc.29, so always install `prisma@7` |
 | zod | 4.6.7 | |
 | @nats-io/transport-node | 3.4.0 | |

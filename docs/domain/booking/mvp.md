@@ -61,4 +61,4 @@ Why Hold lives inside Inventory: the rule "`held` equals the sum of active holds
 ## Consistency notes
 - **Payment after expiry** (criterion 16): `ConvertHold` is rejected → `FailOrder` → reversal requested. That's the compensation.
 - **Hold expiry**: a scheduled job runs every 15 s and expires due holds in batches of 500, using a partial index on `expires_at WHERE status = 'ACTIVE'`.
-- **Hot counter** (criterion 18): optimistic lock with retry vs conditional `UPDATE`. Decided in ADR 0003 after measuring both.
+- **Hot counter** (criterion 18): optimistic lock with retry vs conditional `UPDATE`. Decided in an ADR after measuring both.
