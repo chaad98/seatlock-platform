@@ -14,6 +14,9 @@ NestJS 12 core packages ship as ES modules only. A CommonJS app can still load t
 - Use `import.meta.dirname` instead of `__dirname`.
 - Test code uses `vi.fn()` / `vi.spyOn()` where Jest used `jest.fn()` / `jest.spyOn()`. `describe` / `it` / `expect` are the same.
 
+## Update 2026-11-04: scaffolding with `nest new`
+The developer prefers to scaffold each repo with `nest new` (it produces the same ESM + Vitest setup as the starter), then shape it to the plan in a separate commit. Only feature code is written by hand. So the rule "`@nestjs/cli` is only used to build and watch, never to generate" now means: `nest new` once per repo is fine, `nest g` is not used. The rest of this decision is unchanged.
+
 ## Alternatives considered
 - **CommonJS + Jest:** works, but depends on the `require(esm)` bridge and goes against the NestJS 12 defaults.
 

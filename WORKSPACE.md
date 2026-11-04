@@ -6,7 +6,7 @@ SeatLock is an event ticketing platform built as a **personal learning project**
 | Repo | What it is | Local port | Status |
 |---|---|---|---|
 | `seatlock-platform` | Local infra (docker compose) and project-wide docs | - | ✅ created |
-| `seatlock-gateway` | NestJS API gateway, the only public service | 4000 | planned |
+| `seatlock-gateway` | NestJS API gateway, the only public service | 4000 | 🚧 feature 01 in progress (step 4 of 7) |
 | `seatlock-identity` | NestJS service: users, sessions, roles | NATS only | planned |
 | `seatlock-ticketing` | NestJS service: Catalog + Booking modules | NATS only | planned |
 | `seatlock-payments` | NestJS service: simulated payments | NATS only | planned |
@@ -43,7 +43,9 @@ The skills live in `seatlock-platform/.claude/skills/<name>/SKILL.md`. Read the 
 
 ## Stack decisions so far
 - Node.js 26 LTS (via nvm-windows). TypeScript 6.0.x, **not 7**.
-- Backend: NestJS 12, ESM (`"type": "module"`, `.js` extensions on relative imports), Vitest. Files are written by hand, with `nestjs/typescript-starter` as the reference. `@nestjs/cli` is only used to build and watch, never to generate.
+- Backend: NestJS 12, ESM (`"type": "module"`, `.js` extensions on relative imports), Vitest. Each repo is scaffolded with `nest new`, then shaped to the plan (see ADR 0001 update). Feature code (modules, controllers, DDD and CQRS classes) is written by hand, never generated with `nest g`.
+- HTTP: `NodeAdapter` from `@nestjs/platform-node`, not Express (ADR 0002). Tests create apps with `new NodeAdapter()`.
+- Monitoring: NestJS Observe (`@nestjs/observe`). Keys live in each repo's git-ignored `.env`, written by `npx @nestjs/observe link`. Never commit them.
 - Prisma pinned to 7.x (npm `latest` is the 8.0 release candidate). Zod 4.
 
 ## Working with the developer
