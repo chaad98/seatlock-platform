@@ -50,7 +50,7 @@ The skills live in `seatlock-platform/.claude/skills/<name>/SKILL.md`. Read the 
 - Prisma pinned to 7.x (npm `latest` is the 8.0 release candidate). Zod 4.
 
 ## Working with the developer
-- They are a beginner at architecture with a year of NestJS CRUD experience. Explain basics briefly when they come up, in simple English with a small concrete example.
+- Explain new concepts briefly when they come up, in simple English with a small concrete example.
 - **They write the code and run the commands themselves.** Give one small step at a time with exact commands, then wait for them to confirm (usually with a screenshot).
 - Commands are for **Windows PowerShell 5.1**: one command per code block, never chain with `&&`.
 - Say where a file goes (which repo, which folder) and how to create the folder.
