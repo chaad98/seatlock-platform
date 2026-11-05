@@ -24,7 +24,9 @@ Reference: the official `nestjs/typescript-starter` (commit `da4aab8`, 27 Oct 20
 5. [x] **Security baseline (criteria 3, 4, 5).** Tests first in `test/security.e2e-spec.ts`. Then create `src/app.setup.ts`, shared by `main.ts` and the e2e tests: `helmet()`, `enableCors({ origin: WEB_ORIGIN })`, `enableShutdownHooks()`. Add `WEB_ORIGIN` (`z.url()`, default `http://localhost:3000`) to the env schema, with a unit test that rejects a non-URL. Commit `feat: add security headers and CORS`.
    - Finding: with one allowed origin, the `cors` package always replies `Access-Control-Allow-Origin: <WEB_ORIGIN>`, whatever origin asks. The browser compares it with the page's origin and blocks a mismatch, so CORS is enforced by the browser. The test checks that the header is never the other origin, not that it's missing.
 6. [x] **Repo docs.** `CLAUDE.md` (the pack's backend template, adapted for one-service-per-repo), `README.md` (how to run and test). Commit `docs: add README and CLAUDE.md`. The Observe note from the deleted `AGENTS.md` is in `CLAUDE.md`.
-7. [ ] **Gates and walkthrough (criterion 6).** Run every check, then `npm run build` and `npm run start:prod`. Write `docs/walkthroughs/01-gateway-skeleton.md` (gateway repo) and `docs/roadmap.md` (platform repo). Commit in each repo.
+7. [x] **Gates and walkthrough (criterion 6).** Run every check, then `npm run build` and `npm run start:prod`. Write `docs/walkthroughs/01-gateway-skeleton.md` (gateway repo) and `docs/roadmap.md` (platform repo). Commit in each repo.
+   - All gates green on 2026-11-05: 4 unit tests, 5 e2e tests, and `start:prod` serves `/health`. `start:prod` doesn't load `.env`, so Observe warns that it has no keys (expected).
+   - Found during gates: an `it.only` had been committed in `468cf26`, so only 1 of 4 unit tests ran. Fixed in `1bc3b4b` (`test: remove it.only from env schema spec`). In CI, Vitest fails on `.only` by default.
 
 ## Packages (checked on npm, 2026-11-04)
 | Package | Version | Why |

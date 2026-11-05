@@ -6,7 +6,7 @@ SeatLock is an event ticketing platform built as a **personal learning project**
 | Repo | What it is | Local port | Status |
 |---|---|---|---|
 | `seatlock-platform` | Local infra (docker compose) and project-wide docs | - | ✅ created |
-| `seatlock-gateway` | NestJS API gateway, the only public service | 4000 | 🚧 feature 01 in progress (step 7 of 7: gates and walkthrough) |
+| `seatlock-gateway` | NestJS API gateway, the only public service | 4000 | ✅ feature 01 done (gateway skeleton), not pushed yet |
 | `seatlock-identity` | NestJS service: users, sessions, roles | NATS only | planned |
 | `seatlock-ticketing` | NestJS service: Catalog + Booking modules | NATS only | planned |
 | `seatlock-payments` | NestJS service: simulated payments | NATS only | planned |
@@ -34,6 +34,7 @@ Init scripts run only on an empty volume. To re-run them: `docker compose down -
 - Brief: `briefs/2026-11-03-seatlock-mvp.md` (approved)
 - Domain model: `domain/context-map.md` (approved) and `domain/<context>/mvp.md`
 - Decisions: `adr/` (0001: ESM + Vitest, with checked stack versions)
+- Roadmap: `roadmap.md` (features, status, walkthrough links)
 - Learning log: `learning-log.md`
 
 ## Workflow
