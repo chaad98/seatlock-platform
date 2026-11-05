@@ -6,7 +6,7 @@ SeatLock is an event ticketing platform built as a **personal learning project**
 | Repo | What it is | Local port | Status |
 |---|---|---|---|
 | `seatlock-platform` | Local infra (docker compose) and project-wide docs | - | ✅ created |
-| `seatlock-gateway` | NestJS API gateway, the only public service | 4000 | 🚧 feature 01 in progress (step 4 of 7) |
+| `seatlock-gateway` | NestJS API gateway, the only public service | 4000 | 🚧 feature 01 in progress (step 7 of 7: gates and walkthrough) |
 | `seatlock-identity` | NestJS service: users, sessions, roles | NATS only | planned |
 | `seatlock-ticketing` | NestJS service: Catalog + Booking modules | NATS only | planned |
 | `seatlock-payments` | NestJS service: simulated payments | NATS only | planned |
