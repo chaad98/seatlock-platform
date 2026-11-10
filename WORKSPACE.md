@@ -6,7 +6,7 @@ SeatLock is an event ticketing platform built as a **personal learning project**
 | Repo | What it is | Local port | Status |
 |---|---|---|---|
 | `seatlock-platform` | Local infra (docker compose) and project-wide docs | - | ✅ created |
-| `seatlock-gateway` | NestJS API gateway, the only public service | 4000 | ✅ feature 01 done (gateway skeleton), not pushed yet |
+| `seatlock-gateway` | NestJS API gateway, the only public service | 4000 | ✅ feature 01 done (gateway skeleton), on GitHub |
 | `seatlock-identity` | NestJS service: users, sessions, roles | NATS only | planned |
 | `seatlock-ticketing` | NestJS service: Catalog + Booking modules | NATS only | planned |
 | `seatlock-payments` | NestJS service: simulated payments | NATS only | planned |
@@ -56,5 +56,5 @@ The skills live in `seatlock-platform/.claude/skills/<name>/SKILL.md`. Read the 
 - Say where a file goes (which repo, which folder) and how to create the folder.
 - **Never use the long dash character** (em dash) in messages or files. Use a plain `-`.
 - **No quiz or check-your-understanding questions** unless they ask for one.
-- Git: small single-topic commits in Conventional Commits format (`docs:`, `chore:`, `feat:`, `fix:`, `test:`). Commit now, push later (no GitHub remotes yet).
+- Git: small single-topic commits in Conventional Commits format (`docs:`, `chore:`, `feat:`, `fix:`, `test:`). Push after each finished step. Repos live at `github.com/chaad98/<repo>` (public). Links between repos use full GitHub URLs, because relative paths break on GitHub.
 - Ignore git's "LF will be replaced by CRLF" messages. There is no `.gitattributes`, so never mount a `.sh` script into a Linux container (Windows line endings break it). Use `.sql` or other formats instead.
