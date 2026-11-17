@@ -26,7 +26,7 @@ Reference: the official `nestjs/typescript-starter` (commit `da4aab8`, 27 Oct 20
 6. [x] **Repo docs.** `CLAUDE.md` (the pack's backend template, adapted for one-service-per-repo), `README.md` (how to run and test). Commit `docs: add README and CLAUDE.md`. The Observe note from the deleted `AGENTS.md` is in `CLAUDE.md`.
 7. [x] **Gates and walkthrough (criterion 6).** Run every check, then `npm run build` and `npm run start:prod`. Write `docs/walkthroughs/01-gateway-skeleton.md` (gateway repo) and `docs/roadmap.md` (platform repo). Commit in each repo.
    - All gates green on 2026-11-05: 4 unit tests, 5 e2e tests, and `start:prod` serves `/health`. `start:prod` doesn't load `.env`, so Observe warns that it has no keys (expected).
-   - Found during gates: an `it.only` had been committed in `468cf26`, so only 1 of 4 unit tests ran. Fixed in `1bc3b4b` (`test: remove it.only from env schema spec`). In CI, Vitest fails on `.only` by default.
+   - Found during gates: an `it.only` had been committed in `468cf26`, so only 1 of 4 unit tests ran. Fixed in `a8d2396` (`test: remove it.only from env schema spec`). In CI, Vitest fails on `.only` by default.
 
 ## Packages (checked on npm, 2026-11-04)
 | Package | Version | Why |
