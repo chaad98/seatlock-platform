@@ -33,3 +33,13 @@ The developer prefers to scaffold each repo with `nest new` (it produces the sam
 | @nats-io/transport-node | 3.4.0 | |
 | vitest | 5.1.0 | The starter still uses ^4.1.2. Check compatibility when the first repo is set up |
 | next / react | 16.4.4 / 19.3.1 | |
+
+## Update 2026-11-17: NestJS packages upgraded (gateway)
+Checked the release notes against the gateway code before upgrading. All checks (typecheck, lint, unit, e2e, build) passed. New repos start from these versions.
+
+| Package | From | To | Note |
+|---|---|---|---|
+| @nestjs/core, common, platform-node, testing | 12.3.2 | 12.5.1 | Always upgrade together. 12.5.0 changes many defaults, mostly for microservices, WebSockets and uploads. NodeAdapter now answers 404 when a route parameter would be empty. 12.5.1 adds graceful shutdown for the NATS server. Notes: https://github.com/nestjs/nest/releases |
+| @nestjs/config | 12.0.1 | 12.1.1 | Security fix (https://github.com/nestjs/config/security/advisories/GHSA-q989-84g5-qg72). A variable the validator maps to `undefined` is no longer read from `process.env`, so give optional env vars a `.default()` or read them through `ConfigService` only |
+| @nestjs/cli | 12.0.11 | 12.0.13 | Bug fixes only. Still pins TypeScript ~6.0.2 |
+| @nestjs/observe | 0.3.22 | 0.3.26 | Fixes and stronger redaction of secrets. Shares Nest's request hooks with the app instead of replacing them |
